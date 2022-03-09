@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Arvo&family=Righteous&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.body {
+  min-height: 100vh;
+}
+
+main {
+  min-height: calc(100vh - 6rem);
+}
+
+.text-emphasis {
+  @apply text-blue-500  dark:text-purple-500 font-logo font-bold;
+}
+
+body.light::-webkit-scrollbar {
+  @apply w-4 bg-primary-white;
+}
+
+body.dark::-webkit-scrollbar {
+  @apply w-4 bg-primary-gray;
+}
+body.dark::-webkit-scrollbar-thumb {
+  @apply bg-purple-600 hover:bg-purple-400 active:bg-purple-700 rounded-full  shadow-2xl shadow-primary-red;
+}
+
+body.light::-webkit-scrollbar-thumb {
+  @apply bg-blue-500 hover:bg-blue-400 active:bg-blue-700 rounded-full;
+}
+
+.text-gradient-primary {
+  @apply font-logo font-extrabold text-transparent bg-clip-text transition-colors duration-700 bg-gradient-to-br from-blue-500 via-purple-600 to-primary-red hover:text-primary-red group-hover:text-primary-red p-1;
+}
+
+.bounce-in {
+  /* delay the animation by .3 seconds */
+  animation: bounce-in-top 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation-delay: 0.3s;
+}
+
+@keyframes bounce-in-top {
+  0% {
+    transform: translateY(-200px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.button-primary {
+  @apply hover:scale-110 w-fit p-2.5 rounded-full hover:shadow-md transition-all duration-700 text-blue-500 dark:text-purple-600 hover:text-purple-600 dark:hover:text-blue-500;
+}
+
+.cursor {
+  animation: cursor-blink 0.75s infinite;
+  @apply text-yellow-300 dark:text-yellow-300;
+}
+
+@keyframes cursor-blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.terminal {
+  background: rgba(42, 46, 55, 0.85);
+  -webkit-backdrop-filter: blur(11px);
+  backdrop-filter: blur(11px);
+  border: 1px solid rgba(42, 46, 55, 0.425);
+}
+
+.bubble-in {
+  animation: bubble-in 0.5s ease-in-out;
+}
+
+@keyframes bubble-in {
+  0% {
+    border-top-right-radius: 40rem;
+    border-bottom-right-radius: 40rem;
+  }
+  100% {
+    border-top-right-radius: 0rem;
+    border-bottom-right-radius: 0rem;
+  }
+}
+
+.fade-in1 {
+  animation: fade-in1 0.5s ease-in-out;
+}
+
+@keyframes fade-in1 {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in2 {
+  animation: fade-in2 0.5s ease-in-out;
+}
+
+@keyframes fade-in2 {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.bg-gradient {
+  @apply bg-gradient-to-b  from-primary-white to-gray-200 dark:from-gray-900 dark:to-primary-gray;
+}
